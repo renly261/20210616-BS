@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <style>
+        h2,
+        h3,
+        h4 {
+            margin: 1rem 0;
+        }
+
+        .container {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <div class="container">
+        <h3>導覽 (Navs)</h3>
+        <h4>.nav 本身是彈性盒 flexbox</h4>
+        <ul>
+            <li>可以使用 ul ol 的結構設計導覽</li>
+        </ul>
+        <div class="row">
+            <div class="col">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul>
+            <li>可以使用 .nav 與 a 來設計結構</li>
+        </ul>
+        <nav class="nav">
+            <a class="nav-link active" href="#">Active</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </nav>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <h4>水平對齊 justify-content-*</h4>
+        <ul class="nav justify-content-between">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h4>垂直 .flex-column</h4>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <h4>分頁標籤</h4>
+        <p>基本導覽，並加入 .nav-tabs 或 .nav-pills 以生成具有分頁標籤的介面。</p>
+        <div class="row">
+            <div class="col">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <h3>填充和對齊</h3>
+        <h4>.nav-fill</h4>
+        <p>.nav 內容有兩種擴展寬度的 class, .nav-fill .nav-justified</p>
+        <p>.nav-fill 會將剩餘的空間平均分配給 .nav-item 內容左右兩側的空間, .nav-item 裡的內容物影響寬度</p>
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item">
+                        <a class="nav-link active bg-success text-white" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bg-success text-white" href="#">Longer nav link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bg-success text-white" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled bg-success text-white" href="#" tabindex="-1"
+                            aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <h4>.nav-justified</h4>
+        <p>.nav-justified, 讓 .nav-item 等寬且寬度固定, .nav-item 裡的內容物不影響寬度</p>
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav nav-pills nav-justified">
+                    <li class="nav-item">
+                        <a class="nav-link active bg-danger text-white" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bg-danger text-white" href="#">Longer nav link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bg-danger text-white" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled bg-danger text-white" href="#" tabindex="-1"
+                            aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <h4>JavaScript 行為</h4>
+        <div class="row">
+            <div class="col">
+                <!-- .nav-tabs 沒有圓角 .nav-pills 有圓角, 改了之後 data-toggle 也要一起改 -->
+                <ul class="nav nav-pills" id="myTab">
+                    <li class="nav-item">
+                        <!-- data-toggle 觸發 tab 功能, 注意對應的 id 要一樣 -->
+                        <a class="nav-link active" id="home-tab" data-toggle="pill" href="#sam4">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="pill" href="#sam5">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="pill" href="#sam6">Contact</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="sam4">
+                        收藏運用有些青春刷新生產法人之後，一座研發青春財務決定國有本報，心理為止打了流行，中學然而因為兄弟直播主導演生氣下載連載，你自己東方中有品質，有人訂單時尚人士發送，品質女朋友，商家預覽全體我想我去得分透露，持續人大指數範圍內處罰，好處聯合創建時尚，日本儘。
+                    </div>
+                    <div class="tab-pane fade" id="sam5">
+                        台北西部意識關鍵字結婚無限，認為阿摩斯地下保育石虎造型根本，碩士研究生曝光走到一顆優秀文字未知色彩信心調節註冊時間，發達人物分別樂隊視頻說著沉默每個人多種我現在是不是，總數推廣執行環境，旁邊不知和你造型他們熱情內置等方面，一時受到，小說條例污染透露打印這。
+                    </div>
+                    <div class="tab-pane fade" id="sam6">
+                        為您提出了計算號碼提醒相機，小學結束接觸，可惜對話再度四個住了容易發現臺灣我家線路我是，少女徹底共享版隊員面臨訪問出口團隊推坑大魔王暫無事務連載，確認觀眾，歷史補充對方臨床，爸爸到達得到甚至要去命令協會加上狀況依法經營，人口改革本帖一陣美女溫州激烈執法很。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

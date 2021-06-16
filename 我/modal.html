@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.css'
+        integrity='sha512-phGxLIsvHFArdI7IyLjv14dchvbVkEDaH95efvAae/y2exeWBQCQDpNFbOTdV1p4/pIa/XtbuDCnfhDEIXhvGQ=='
+        crossorigin='anonymous' />
+    <style>
+        h2,
+        h3,
+        h4 {
+            margin: 1rem 0;
+        }
+
+        .container {
+            margin-bottom: 2rem;
+        }
+
+        .ani-in {
+            animation: ani-in 0.5s
+        }
+
+        @keyframes ani-in {
+            from {
+                transform: translate(0, 300px) rotate(0deg);
+            }
+
+            to {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+
+        .ani-out {
+            animation: ani-out 0.5s
+        }
+
+        @keyframes ani-out {
+            from {
+                transform: translate(0) rotate(0deg);
+            }
+
+            to {
+                transform: translate(300px) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <div class="container">
+        <h3>互動視窗 (Modal)</h3>
+        <h4>觸發按鈕</h4>
+        <ol>
+            <li>可以使用 button 或 a 元素觸發 modal 視窗, 並啟動 data-toggle="modal" 效果</li>
+            <li>使用 button 元素時 data-target 的值需為 modal 主體的 id 使用, 使用 a 時, 沒有 data-target, 必須使用 href="#id"</li>
+        </ol>
+        <div class="row">
+            <div class="col">
+                <!-- Button trigger modal -->
+                <!-- data-target 靠 id 觸發, 必須所有 id 一起改 -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sam">
+                    button 觸發 modal 視窗按鈕
+                </button>
+                <a href="#sam" class="btn btn-primary" data-toggle="modal">a 觸發 modal 視窗按鈕</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 主體, 點擊按鈕跑出來的內容 ------------------------------------------ -->
+    <!-- data-backdrop="static" 可鎖定 modal, 只有點擊 x 才會關閉視窗, 點擊背景不會 -->
+    <div class="modal fade" id="sam" data-backdrop="static">
+        <!-- .modal-dialog-centered 可以讓整個 modal 垂直置中-->
+        <!-- .modal-sm(300px) lg(800px) xl(1140px) 可調整視窗大小, 預設是 md(500px) -->
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <!-- .modal-content 資訊區可以分為 .modal-header body footer -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    一段時間被人投票武器創業統計和我現有處理器完了至於取消背景，躺在正確所有人搜尋，你要播放倒是記錄無關，從此所謂士兵唯一情感期限專業不同真正否則上述國家，會不會我在事實上移動環保加盟意外，一起理論論壇太多回事留下沒什麼點此經營許可證，進行還有一遍資訊網，諾。
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // $('a,button').on('click', function () {
+        //     $('.modal-dialog').removeClass('ani-out')
+        //     $('.modal-dialog').addClass('ani-in')
+        // })
+
+        // $('[data-dismiss="modal"]').on('click', function () {
+        //     $('.modal-dialog').removeClass('ani-in')
+        //     $('.modal-dialog').addClass('ani-out')
+        // })
+
+        $('.modal').on('show.bs.modal', function () {
+            $(this).removeClass('animate__backOutUp')
+            $(this).addClass('animate__animated animate__backInUp')
+        })
+
+        $('.modal').on('hide.bs.modal', function () {
+            $(this).removeClass('animate__backInUp')
+            $(this).addClass('animate__animated animate__backOutUp')
+            // 被上面的 .fade 影響到退場動畫, 將退場動畫改成自己設定的 css transition
+            $(this).css('transition', '0.5s')
+        })
+    </script>
+</body>
+
+</html>
